@@ -1,0 +1,10 @@
+.italic {
+    -fx-font-style: italic;
+}
+
+.bold {
+    -fx-font-weight: bold;
+}
+.highlight {
+    -rtfx-background-color: yellow;
+}

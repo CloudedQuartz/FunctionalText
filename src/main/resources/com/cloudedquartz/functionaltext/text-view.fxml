@@ -10,47 +10,48 @@
 <?import java.lang.String?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cloudedquartz.functionaltext.TextViewController">
    <top>
       <HBox spacing="20" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="10" left="10" right="10" top="10" />
          </BorderPane.margin>
          <children>
-            <VBox spacing="10" alignment="CENTER">
+            <VBox spacing="10" alignment="TOP_CENTER" HBox.hgrow="ALWAYS">
                <Label text="Font" />
-                  <HBox spacing="10" alignment="CENTER_LEFT">
+               <Separator/>
+               <padding><Insets bottom="2" left="2" right="2" top="2" /></padding>
+                  <HBox spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
                   <Label text="Font Family:" />
-                  <ChoiceBox/>
+                  <ChoiceBox fx:id="fontFamilyChoiceBox"/>
                   </HBox>
-                  <HBox spacing="10" alignment="CENTER_LEFT">
+                  <HBox spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
                   <Label text="Font Size:" />
-                  <ChoiceBox/>
+                  <ChoiceBox fx:id="fontSizeChoiceBox"/>
                </HBox>
             </VBox>
             <Separator orientation="VERTICAL"/>
-            <VBox spacing="10" alignment="CENTER">
+            <VBox spacing="10" alignment="TOP_CENTER" HBox.hgrow="ALWAYS">
                <Label text="Style" />
-               <HBox spacing="10" alignment="CENTER">
-                  <ToggleButton text="𝐁" />
-                  <ToggleButton text="𝐼" />
-               </HBox>
-               <HBox spacing="10" alignment="CENTER">
-                  <Button maxWidth="30" maxHeight="30">
-                      <graphic>
-                          <ImageView fitWidth="12" fitHeight="12">
-                              <Image url="@Icons/highlighter.png"/>
-                          </ImageView>
-                      </graphic>
-                  </Button>
-                  <ColorPicker style="-fx-color-label-visible: false;" />
+               <Separator/>
+               <padding><Insets bottom="2" left="2" right="2" top="2" /></padding>
+               <HBox spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+                  <ToggleButton fx:id="boldToggleButton" text="𝐁" prefWidth="20" prefHeight="20" />
+                  <ToggleButton fx:id="italicToggleButton" text="𝐼" prefWidth="20" prefHeight="20" />
+                  <ToggleButton fx:id="highlightButton" prefWidth="20" prefHeight="20">
+                     <graphic>
+                        <ImageView fitWidth="12" fitHeight="12">
+                           <Image url="@Icons/highlighter.png"/>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
                </HBox>
             </VBox>
          </children>
       </HBox>
    </top>
    <center>
-      <StyleClassedTextArea wrapText="true" xmlns:fx="http://javafx.com/fxml/1">
+      <StyleClassedTextArea fx:id="textArea" wrapText="true" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@text-view-TextArea.css">
          <BorderPane.margin><Insets bottom="10" left="10" right="10" top="10" /></BorderPane.margin>
          <padding><Insets bottom="2" left="2" right="2" top="2" /></padding>
       </StyleClassedTextArea>
