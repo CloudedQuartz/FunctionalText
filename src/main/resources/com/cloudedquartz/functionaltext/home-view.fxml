@@ -3,18 +3,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="720" prefWidth="1280" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cloudedquartz.functionaltext.HomeViewController">
   <items>
       <MenuBar>
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="openMenuItem" mnemonicParsing="false" text="Open" onAction="#handleOpenFileAction"/>
+              <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" text="Save" onAction="#handleSaveFileAction"/>
+              <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" text="Close" onAction="#handleCloseFileAction"/>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem fx:id="findReplaceMenuItem" mnemonicParsing="false" text="Find / Replace" onAction="#handleFindReplaceAction"/>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -27,9 +29,7 @@
       <TabPane tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Text">
-            <AnchorPane>
-              <fx:include source="text-view.fxml" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10" />
-            </AnchorPane>
+            <AnchorPane fx:id="textViewContainer"/>
           </Tab>
           <Tab text="Image">
           </Tab>

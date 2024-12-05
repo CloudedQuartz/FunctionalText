@@ -8,3 +8,7 @@
 .highlight {
     -rtfx-background-color: yellow;
 }
+
+.highlight-findreplace {
+    -rtfx-background-color: lightgreen;
+}
